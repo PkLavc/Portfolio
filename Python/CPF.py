@@ -80,4 +80,10 @@ while True:
     
     cpf_gerado += str(validador)
 
+    parte_1 = cpf_gerado[0:3]
+    parte_2 = cpf_gerado[3:6]
+    parte_3 = cpf_gerado[6:9]
+    parte_4 = cpf_gerado[9:11]
+    cpf_gerado = parte_1 + "." + parte_2 + "." + parte_3 + "-" + parte_4
+
     input(f'CPF gerado: {cpf_gerado}\nAperte qualquer tecla para continuar\n')
