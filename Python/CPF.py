@@ -80,6 +80,7 @@ while True:
     
     cpf_gerado += str(validador)
 
+    # RTT - Recurso Tecnico temporario :)
     parte_1 = cpf_gerado[0:3]
     parte_2 = cpf_gerado[3:6]
     parte_3 = cpf_gerado[6:9]
