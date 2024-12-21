@@ -26,14 +26,19 @@ while True:
         continue
     
     if opcao == 'validar':
-        for formatar in user:
-            if formatar in '0123456789':
-                cpf_user += formatar
+        for _ in user:
+            if _ in '0123456789':
+                cpf_user += _
+        teste_repeticao = cpf_user[0] * 11
+        if teste_repeticao == cpf_user:
+            input('CPF Invalido, aperte qualquer tecla para continuar\n')
+            continue
         if len(cpf_user) == 11:
             cpf_gerado = cpf_user[:9]
         else:
             input('CPF Invalido, aperte qualquer tecla para continuar\n')
             continue
+        
 
     if opcao == 'gerar':
         for _ in range(9):
