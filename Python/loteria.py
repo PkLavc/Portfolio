@@ -29,9 +29,8 @@ while True:
                 teste_2 -= 1
 
             teste_1 += 1
-        if 2 in rtt_repeticao or 3 in rtt_repeticao: 
-            continue
-        break
+        if rtt_repeticao != [2, 2, 2, 2, 2, 2]: 
+            break
 
     # input(numeros_sorteados)
     
