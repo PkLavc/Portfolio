@@ -12,27 +12,10 @@ while True:
     aposta = ['', '','', '','', '']
     acertos = 0
 
-    def sortear():
-        for indice in range(6):
-            numeros_sorteados[indice] = str(random.randint(1, 60))
-        return numeros_sorteados
-
-    while True:
-        sortear()
-        rtt_repeticao = [0, 0, 0, 0, 0, 0]
-        teste_1 = 0
-        while teste_1 != 6:
-            teste_2 = 5
-            while teste_2 != -1:
-                if numeros_sorteados[teste_1] == numeros_sorteados[teste_2]:
-                    rtt_repeticao[teste_1] += 1
-                teste_2 -= 1
-
-            teste_1 += 1
-        if rtt_repeticao != [2, 2, 2, 2, 2, 2]: 
-            break
-
-    # input(numeros_sorteados)
+    def sortear_numeros():
+        return random.sample(range(1, 61), 6)
+    
+    numeros_sorteados = sortear_numeros()
     
     Manu = input('Insira 6 numeros, separados por "," de 1 a 60\n')
 
