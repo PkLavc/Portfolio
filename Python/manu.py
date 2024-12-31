@@ -12,7 +12,8 @@ _______________________________________________________________________
                           ( ^.^ )||  ( ^.~ )
                            >    >||    > <
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
-opcoes = ('Loteria',)
+opcoes = ('Loteria',
+          'Perguntas e Respostas')
 
 while True:
     os.system('cls')
@@ -107,6 +108,63 @@ while True:
 
             user = input(f'Resultado da Mega Sena {numeros_sorteados}\nAperte ENTER para continuar ou [E]xit para sair\n').lower()
             
+            if user == 'e':
+                break
+        continue
+
+    elif user == 2:
+        perguntas = [
+        {
+            'Pergunta': 'Quanto é 2+2?',
+            'Opções': ['1', '3', '4', '5'],
+            'Resposta': '4',
+        },
+        {
+            'Pergunta': 'Quanto é 5*5?',
+            'Opções': ['25', '55', '10', '51'],
+            'Resposta': '25',
+        },
+        {
+            'Pergunta': 'Quanto é 10/2?',
+            'Opções': ['4', '5', '2', '1'],
+            'Resposta': '5',
+        },
+        ]
+        indice = 0
+        acertos = 0
+        erros = 0
+
+        while True:
+            os.system('cls')
+
+            print(f'Pergunta {indice + 1}\n{perguntas[indice]['Pergunta']}')
+            i = 1
+            for opcao in perguntas[indice]['Opções']:
+                print(f'{i}) {opcao}')
+                i += 1
+            user = input('Qual a opcao esta correta?\n')
+
+            try:
+                user = int(user) - 1
+                if perguntas[indice]['Resposta'] == perguntas[indice]['Opções'][user]:
+                    print('Acertou!')
+                    acertos += 1
+                else:
+                    print('Voce errou!')
+                    erros += 1
+
+            except:
+                print('Opcao invalida, digite apenas o resultado')
+
+            print(f'Acertos {acertos}\t Erros: {erros}')
+            indice += 1
+
+            if indice == len(perguntas):
+                print(f'Voce chegou ao fim de {opcoes[1]}')
+                indice = 0
+
+            user = input('Aperte ENTER para continuar ou [E]xit para sair\n').lower()
+        
             if user == 'e':
                 break
         continue
