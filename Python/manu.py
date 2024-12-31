@@ -12,6 +12,36 @@ _______________________________________________________________________
                           ( ^.^ )||  ( ^.~ )
                            >    >||    > <
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
+
+jogador = [
+        {
+            'nome': 'Usuario',
+            'pontuacao': 0
+        },
+        ]
+
+def modo_de_jogo():
+    user = input('''Escolha o Modo de jogo:
+          [S]olo
+          [M]ultijogador
+          ''').lower()
+    if user == 's':
+        jogador[0]['nome'] = input('Qual o seu nome?')
+    elif user == 'm':
+        indice = 0
+        multiplayer = True
+
+        while multiplayer:
+            jogador[indice]['nome'] = input('Digite o nome do jogador:')
+            if indice == 0:
+                indice += 1
+                jogador[indice]['nome'] = input('Digite o nome do jogador:')
+            user = input('') # Em construçao
+            multiplayer = False
+        
+    return jogador
+
+
 opcoes = ('Loteria',
           'Perguntas e Respostas')
 
@@ -167,4 +197,10 @@ while True:
         
             if user == 'e':
                 break
+        continue
+
+    elif user == 3:
+        ...
+    else:
+        input('Opção invalida\nAperte ENTER para retornar ao menu')
         continue
