@@ -2,6 +2,8 @@
 
 Welcome to my project portfolio! Here are the projects that showcase my skills and interests in programming.
 
+> **Note**: My primary account is **PkLavc**, and my secondary account is **Azrael-S3211**.
+
 ## Portfolio Structure
 
 ### Manu  
@@ -20,6 +22,8 @@ Welcome to my project portfolio! Here are the projects that showcase my skills a
 # Portfólio PT-BR
 
 Bem-vindo ao meu portfólio de projetos! Aqui estão os projetos que demonstram minhas habilidades e interesses em programação.
+
+> **Nota**: Minha conta principal é **PkLavc**, e minha conta secundária é **Azrael-S3211**.
 
 ## Estrutura do Portfólio
 
