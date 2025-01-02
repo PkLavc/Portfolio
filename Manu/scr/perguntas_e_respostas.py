@@ -50,8 +50,4 @@ def perguntas_e_respostas():
         if indice == len(perguntas):
             print(f'Você chegou ao fim das perguntas')
             indice = 0
-
-        user = input('Aperte ENTER para continuar ou [E]xit para sair\n').lower()
-
-        if user == 'e':
             break

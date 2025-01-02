@@ -77,5 +77,3 @@ def sorteio():
         print('Voce ganhou uma bolinha de peleleca')
     else:
         print('O mundo nao gosta de voce. Voce levou um espirro na cara')
-
-    return numeros_sorteados

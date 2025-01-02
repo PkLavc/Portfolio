@@ -26,21 +26,27 @@ def modo_de_jogo():
           [S]olo
           [M]ultijogador
           ''').lower()
-    if user == 's':
-        jogador[0]['nome'] = input('Qual o seu nome?')
-    elif user == 'm':
-        indice = 0
-        multiplayer = True
 
-        while multiplayer:
-            jogador[indice]['nome'] = input('Digite o nome do jogador:')
-            if indice == 0:
-                indice += 1
+    def multiplayer():
+            indice = 0
+            while True:
+                try:
+                    user = int(input('Qual a quantidade de jogadores?\n'))
+                    break
+                except ValueError:
+                    print('Apenas numeros!')
+       
+            while indice < user:
                 jogador[indice]['nome'] = input('Digite o nome do jogador:')
-            user = input('') # Em construçao
-            multiplayer = False
-        
-    return jogador
+                jogador[indice]['pontuacao'] = 0
+                indice += 1
+
+    if user == 's':
+        user = input('Qual o seu nome?')
+        if user != '':
+            jogador[0]['nome'] = user
+    elif user == 'm':
+        multiplayer()
 
 
 opcoes = ('Loteria',
@@ -64,8 +70,16 @@ while True:
                 break
             elif user == '':
                 continue
+
     elif user == 2:
-        perguntas_e_respostas()
+        while True:
+            perguntas_e_respostas()
+            user = input(f'Aperte ENTER para continuar ou [E]xit para sair\n').lower()
+            if user == 'e':
+                break
+            elif user == '':
+                continue
+
     else:
         input('Opção invalida\nAperte ENTER para retornar ao menu')
         continue
