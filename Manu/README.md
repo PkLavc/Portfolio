@@ -12,7 +12,6 @@ ______________________________________________
 ```
 ## Português  
 Manu é um projeto que une diversos jogos low-code em uma única plataforma. Desenvolvido em parceria, onde eu sou responsável pela programação e minha namorada pela criação do roteiro. O programa é inteiramente em português.
-
 ```
 _____________________________________
 | Aqui teremos muitos "RTT" e amor* |
@@ -20,4 +19,22 @@ _____________________________________
             ^_^  ||    ^_^
           ( ^.^ )||  ( ^.~ )
            >    >||    > <
+```
+<!-- ************************************************** Bar ***************************************************** -->
+
+  <img src="https://github.com/PkLavc/PkLavc/blob/94f67aca0f96f0e9cef748c2c27877c02586f77d/resources/Rainbow.gif" width="100%">
+
+<!-- *********************************************** Estrutura *************************************************** -->
+
+## Estrutura 
+
+```
+Manu/
+├── main.py                       # Arquivo principal
+├── src/                          # Pasta com funcionalidades de jogo
+│   ├── __init__.py               # Arquivo para tornar o diretório um pacote
+│   ├── loteria.py                # Módulo para o jogo de loteria
+│   └── perguntas_respostas.py    # Módulo para o jogo de perguntas e respostas
+├── README.md                     # Descrição do projeto
+
 ```
