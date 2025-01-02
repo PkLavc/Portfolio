@@ -18,6 +18,11 @@ Welcome to my project portfolio! Here are the projects that showcase my skills a
 #### Python  
 - **CPF.py**: Script for CPF validation and manipulation.  
 
+<!-- ************************************************** Bar ***************************************************** -->
+
+  <img src="https://github.com/PkLavc/PkLavc/blob/94f67aca0f96f0e9cef748c2c27877c02586f77d/resources/Rainbow.gif" width="100%">
+
+<!-- ************************************************* PT - BR *************************************************** -->
 
 # Portfólio PT-BR
 
