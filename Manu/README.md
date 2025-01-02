@@ -1,4 +1,11 @@
-# Manu
+_______________________________________________________________________
+|                                                                      |
+| Projeto em conjunto com a namorada (Eu programo | Ela cria o roteiro)|
+|                Aqui teremos muitos "RTT" e amor*                     |
+|______________________________________________________________________|
+                            ^_^  ||    ^_^
+                          ( ^.^ )||  ( ^.~ )
+                           >    >||    > <
 
 ## English  
 Manu is a project that brings together multiple low-code games in a single platform. Developed in partnership, where I am responsible for programming and my girlfriend creates the storyline. The program is entirely in Portuguese.
