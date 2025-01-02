@@ -15,7 +15,7 @@ Aperte ENTER para iniciar (Não tem mais volta)\n''')
 
 jogador = [
         {
-            'nome': 'Usuario',
+            'nome': 'Prediogorado',
             'pontuacao': 0
         },
         ]
