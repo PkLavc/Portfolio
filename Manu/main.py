@@ -1,6 +1,7 @@
 import os
 from scr.loteria import sorteio
 from scr.perguntas_e_respostas import perguntas_e_respostas
+from scr.data import *
 
 os.system('cls')
 input('''
@@ -15,38 +16,44 @@ _______________________________________________________________________
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
 
 jogador = [
-        {
-            'nome': 'Prediogorado',
-            'pontuacao': 0
-        },
-        ]
+    {
+        'nome': 'Prediogorado',
+        'pontuacao': 0
+    },
+]
 
 def modo_de_jogo():
-    user = input('''Escolha o Modo de jogo:
+    escolha = input('''Escolha o Modo de jogo:
           [S]olo
           [M]ultijogador
           ''').lower()
 
     def multiplayer():
-            indice = 0
-            while True:
-                try:
-                    user = int(input('Qual a quantidade de jogadores?\n'))
-                    break
-                except ValueError:
-                    print('Apenas numeros!')
-       
-            while indice < user:
-                jogador[indice]['nome'] = input('Digite o nome do jogador:')
-                jogador[indice]['pontuacao'] = 0
-                indice += 1
+        while True:
+            try:
+                num_jogadores = int(input('Qual a quantidade de jogadores?\n'))
+                if num_jogadores < 1:
+                    print("Deve haver pelo menos um jogador.")
+                    continue
+                break
+            except ValueError:
+                print('Apenas números!')
 
-    if user == 's':
+        for indice in range(num_jogadores):
+            nome_jogador = input(f'Digite o nome do jogador {indice + 1}: ')
+            if nome_jogador: 
+                jogador.append({'nome': nome_jogador, 'pontuacao': 0})
+            else:
+                jogador.append({'nome': nome_jogador_data(), 'pontuacao': 0})
+
+    if escolha == 's':
         user = input('Qual o seu nome?')
-        if user != '':
+        if user != '': 
             jogador[0]['nome'] = user
-    elif user == 'm':
+    elif escolha == 'm':
         multiplayer()
+    else:
+        print("Opção inválida. Tente novamente.")
 
 
 opcoes = ('Loteria',
