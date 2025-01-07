@@ -1,7 +1,5 @@
 import os
-from scr.loteria import sorteio
-from scr.perguntas_e_respostas import perguntas_e_respostas
-from scr.data import *
+import scr as modo
 
 os.system('cls')
 input('''
@@ -44,7 +42,7 @@ def modo_de_jogo():
             if nome_jogador: 
                 jogador.append({'nome': nome_jogador, 'pontuacao': 0})
             else:
-                jogador.append({'nome': nome_jogador_data(), 'pontuacao': 0})
+                jogador.append({'nome': modo.nome_jogador_data(), 'pontuacao': 0})
 
     if escolha == 's':
         user = input('Qual o seu nome?')
@@ -71,7 +69,7 @@ while True:
 
     if user == 1:
         while True:
-            sorteio()  
+            modo.sorteio()
             user = input(f'Aperte ENTER para continuar ou [E]xit para sair\n').lower()
             if user == 'e':
                 break
@@ -80,7 +78,7 @@ while True:
 
     elif user == 2:
         while True:
-            perguntas_e_respostas()
+            modo.perguntas_e_respostas()
             user = input(f'Aperte ENTER para continuar ou [E]xit para sair\n').lower()
             if user == 'e':
                 break
