@@ -7,7 +7,10 @@ save = '.\\saves\\'
 jogadores = []
 save_jogador = save + 'jogadores_save.json'
 
-os.system('cls')
+def limpar():
+    os.system('cls')
+
+limpar()
 input('''
 _______________________________________________________________________
 |                                                                      |
@@ -18,6 +21,7 @@ _______________________________________________________________________
                           ( ^.^ )||  ( ^.~ )
                            >    >||    > <
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
+limpar()
 
 # jogador = [
 #     {
@@ -27,11 +31,12 @@ Aperte ENTER para iniciar (Não tem mais volta)\n''')
 # ]
 
 def recuperar_save():
-    with open('save_jogador', 'r', encoding = 'utf8') as data:
+    global jogadores
+    with open(save_jogador, 'r', encoding = 'utf8') as data:
         jogadores = json.load(data)
 
 def salvamento():
-    with open('save_jogador', 'w', encoding = 'utf8') as data:
+    with open(save_jogador, 'w', encoding = 'utf8') as data:
         json.dump(
             jogadores,
             data,
@@ -43,13 +48,20 @@ try:
 except:
     salvamento()
 
-class players():
+class player():
 
-    save_jogador = save + 'jogadores_save.json'
-
-    def __init__(self, nome = '', pontuacao = 0):
+    def __init__(self, nome, pontuacao = 0, jogos = 0):
         self.nome = nome
-        self.pontuacao = 0
+        self.pontuacao = pontuacao
+        self.jogos = jogos
+
+        jogador = vars(self)
+        if jogador not in jogadores:
+            jogadores.append(jogador)
+        salvamento()
+
+def sem_nome_player():
+    player(nome = 'Prediogorado')
 
 def modo_de_jogo():
     escolha = input('''Escolha o Modo de jogo:
@@ -61,7 +73,7 @@ def modo_de_jogo():
         while True:
             try:
                 num_jogadores = int(input('Qual a quantidade de jogadores?\n'))
-                if num_jogadores < 1:
+                if num_jogadores <= 1:
                     print("Deve haver pelo menos um jogador.")
                     continue
                 break
@@ -69,35 +81,81 @@ def modo_de_jogo():
                 print('Apenas números!')
 
         for indice in range(num_jogadores):
-            nome_jogador = input(f'Digite o nome do jogador {indice + 1}: ')
-            if nome_jogador: 
-                jogador.append({'nome': nome_jogador, 'pontuacao': 0})
+            nome_jogador = input(f'Digite o nome do jogador {indice + 1}:\n')
+            if nome_jogador:
+                player(nome = nome_jogador)
             else:
-                jogador.append({'nome': modo.nome_jogador_data(), 'pontuacao': 0})
+                sem_nome_player()
+        return
 
     if escolha == 's':
-        user = input('Qual o seu nome?')
-        if user != '': 
-            jogador[0]['nome'] = user
+        nome_jogador = input('Qual o seu nome?\n')
+        if nome_jogador != '': 
+            player(nome = nome_jogador)
+            return
+        else:
+            sem_nome_player()
+            return
     elif escolha == 'm':
         multiplayer()
     else:
         print("Opção inválida. Tente novamente.")
+        modo_de_jogo()
 
+modo_de_jogo()
 
-opcoes = ('Loteria',
-          'Perguntas e Respostas')
+opcoes_modos = (
+'Escolher novamente o modo de jogo',
+'Pontuacao Jogadores',
+'Escolher jogo'
+)
 
-while True:
-    os.system('cls')
+opcoes_modulos = (
+'Loteria',
+'Perguntas e Respostas'
+)
 
+def opcoes_iniciais():
     print('Escolha uma opção')
     indice_menu = 1
-    for opcao in opcoes:
+    for opcao in opcoes_modos:
         print(f'{indice_menu}) {opcao}')
         indice_menu += 1
     user = int(input())
+    return user
 
+def modulos():
+    indice_menu = 1
+    for opcao in opcoes_modulos:
+        print(f'{indice_menu}) {opcao}')
+        indice_menu += 1
+    user = int(input())
+    return user
+
+while True:
+    limpar()
+
+    user = opcoes_iniciais()
+
+    if user == 1:
+        limpar()
+        modo_de_jogo()
+        continue
+    if user == 2:
+        limpar()
+        for jogador in jogadores:
+            nome = jogador['nome']
+            jogos = jogador['jogos']
+            pontuacao = jogador['pontuacao']
+            print(f"Player: {nome:<20} Jogou {str(jogos):<3} partidas\t\tPontuacao Total: {str(pontuacao):<5}")
+        input('Enter parea continuar')
+        continue
+    if user == 3:
+        limpar()
+        user = modulos()
+
+
+# ======================================== Sorteio ========================================
     if user == 1:
         while True:
             modo.sorteio()
@@ -107,7 +165,8 @@ while True:
             elif user == '':
                 continue
 
-    elif user == 2:
+# ================================= Perguntas e respostas =================================
+    if user == 2:
         while True:
             modo.perguntas_e_respostas()
             user = input(f'Aperte ENTER para continuar ou [E]xit para sair\n').lower()
@@ -115,6 +174,8 @@ while True:
                 break
             elif user == '':
                 continue
+
+# ==================================== SFinal da Main ====================================
 
     else:
         input('Opção invalida\nAperte ENTER para retornar ao menu')
