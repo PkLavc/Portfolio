@@ -23,13 +23,6 @@ _______________________________________________________________________
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
 limpar()
 
-# jogador = [
-#     {
-#         'nome': 'Prediogorado',
-#         'pontuacao': 0
-#     },
-# ]
-
 def recuperar_save():
     global jogadores
     with open(save_jogador, 'r', encoding = 'utf8') as data:
