@@ -1,5 +1,11 @@
 import os
+import json
+
 import scr as modo
+
+save = '.\\saves\\'
+jogadores = []
+save_jogador = save + 'jogadores_save.json'
 
 os.system('cls')
 input('''
@@ -13,12 +19,37 @@ _______________________________________________________________________
                            >    >||    > <
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
 
-jogador = [
-    {
-        'nome': 'Prediogorado',
-        'pontuacao': 0
-    },
-]
+# jogador = [
+#     {
+#         'nome': 'Prediogorado',
+#         'pontuacao': 0
+#     },
+# ]
+
+def recuperar_save():
+    with open('save_jogador', 'r', encoding = 'utf8') as data:
+        jogadores = json.load(data)
+
+def salvamento():
+    with open('save_jogador', 'w', encoding = 'utf8') as data:
+        json.dump(
+            jogadores,
+            data,
+            indent = 2
+        )
+
+try:
+    recuperar_save()
+except:
+    salvamento()
+
+class players():
+
+    save_jogador = save + 'jogadores_save.json'
+
+    def __init__(self, nome = '', pontuacao = 0):
+        self.nome = nome
+        self.pontuacao = 0
 
 def modo_de_jogo():
     escolha = input('''Escolha o Modo de jogo:
