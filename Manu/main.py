@@ -47,10 +47,10 @@ except FileNotFoundError:
 
 # ======================================== Config Player ========================================
 class Player():
-    def __init__(self, nome, pontuacao = 0, jogos = 0):
+    def __init__(self, nome):
         self.nome = nome
-        self.pontuacao = pontuacao
-        self.jogos = jogos
+        self.pontuacao = 0
+        self.jogos = 0
 
         jogador = vars(self)
         if jogador not in jogadores:
