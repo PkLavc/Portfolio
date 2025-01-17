@@ -63,9 +63,10 @@ def sem_nome_Player():
 # ======================================== Modo de jogo ========================================
 def modo_de_jogo():
     escolha = input('''Escolha o Modo de jogo:
-          [S]olo
-          [M]ultijogador
-          ''').lower()
+[S]olo
+[M]ultijogador
+''').lower()
+    limpar()
 
     def multiplayer():
         while True:
