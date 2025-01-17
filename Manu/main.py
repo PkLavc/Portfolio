@@ -61,31 +61,31 @@ def sem_nome_Player():
     Player(nome = 'Prediogorado')
 
 # ======================================== Modo de jogo ========================================
+def multiplayer():
+    while True:
+        try:
+            num_jogadores = int(input('Qual a quantidade de jogadores?\n'))
+            if num_jogadores <= 1:
+                print("Deve haver pelo menos um jogador.")
+                continue
+            break
+        except ValueError:
+            print('Apenas números!')
+
+    for indice in range(num_jogadores):
+        nome_jogador = input(f'Digite o nome do jogador {indice + 1}:\n')
+        if nome_jogador:
+            Player(nome = nome_jogador)
+        else:
+            sem_nome_Player()
+    return
+
 def modo_de_jogo():
     escolha = input('''Escolha o Modo de jogo:
 [S]olo
 [M]ultijogador
 ''').lower()
     limpar()
-
-    def multiplayer():
-        while True:
-            try:
-                num_jogadores = int(input('Qual a quantidade de jogadores?\n'))
-                if num_jogadores <= 1:
-                    print("Deve haver pelo menos um jogador.")
-                    continue
-                break
-            except ValueError:
-                print('Apenas números!')
-
-        for indice in range(num_jogadores):
-            nome_jogador = input(f'Digite o nome do jogador {indice + 1}:\n')
-            if nome_jogador:
-                Player(nome = nome_jogador)
-            else:
-                sem_nome_Player()
-        return
 
     if escolha == 's':
         nome_jogador = input('Qual o seu nome?\n')
