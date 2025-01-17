@@ -24,8 +24,7 @@ opcoes_modulos = (
 
 # =========================================== avisos ===========================================
 def avisos(numero):
-    if numero == 1:
-        input(modo.aviso_1)
+    input(modo.aviso_[numero])
 
 # ============================================ save ============================================
 def recuperar_save():
@@ -159,7 +158,7 @@ _______________________________________________________________________
 Aperte ENTER para iniciar (Não tem mais volta)\n''')
 
 input(intro) # Algo em mim diz que vai ser melhor assim doque escrever diretamente... vou me escutar
-avisos(1)
+avisos(0)
 limpar()
 
 while True:
