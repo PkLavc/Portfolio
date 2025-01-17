@@ -18,5 +18,11 @@ def nome_jogador_data(*args):
     nome_escolhido = random.choice(nomes)
     return nome_escolhido
 
+aviso_1 = ('''
+   /\\_/\\    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓         /\\_/\\
+ =(  o.o)=  |Teclado gringo, palavras com acentos serao um bonus*|       =(0.0⸝⸝)=
+ʕ(   ა૮)    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛       (ა૮   )ʔ
+Agora pode prosseguir ˙ᴗ˙
+           
+''')
 
-print(nome_jogador_data())

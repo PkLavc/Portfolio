@@ -3,26 +3,31 @@ import json
 
 import scr as modo
 
+# =========================================== Config ==========================================
+def limpar():
+    os.system('cls')
+
+# =========================================== dados ===========================================
 save = '.\\saves\\'
 jogadores = []
 save_jogador = save + 'jogadores_save.json'
 
-def limpar():
-    os.system('cls')
+opcoes_modos = (
+'Escolher novamente o modo de jogo',
+'Pontuacao Jogadores',
+'Escolher jogo'
+)
+opcoes_modulos = (
+'Loteria',
+'Perguntas e Respostas'
+)
 
-limpar()
-input('''
-_______________________________________________________________________
-|                                                                      |
-| Projeto em conjunto com a namorada (Eu programo | Ela cria o roteiro)|
-|                Aqui teremos muitos "RTT" e amor*                     |
-|______________________________________________________________________|
-                            ^_^  ||    ^_^
-                          ( ^.^ )||  ( ^.~ )
-                           >    >||    > <
-Aperte ENTER para iniciar (Não tem mais volta)\n''')
-limpar()
+# =========================================== avisos ===========================================
+def avisos(numero):
+    if numero == 1:
+        input(modo.aviso_1)
 
+# ============================================ save ============================================
 def recuperar_save():
     global jogadores
     with open(save_jogador, 'r', encoding = 'utf8') as data:
@@ -35,14 +40,13 @@ def salvamento():
             data,
             indent = 2
         )
-
 try:
     recuperar_save()
-except:
+except FileNotFoundError:
     salvamento()
 
-class player():
-
+# ======================================== Config Player ========================================
+class Player():
     def __init__(self, nome, pontuacao = 0, jogos = 0):
         self.nome = nome
         self.pontuacao = pontuacao
@@ -53,9 +57,10 @@ class player():
             jogadores.append(jogador)
         salvamento()
 
-def sem_nome_player():
-    player(nome = 'Prediogorado')
+def sem_nome_Player():
+    Player(nome = 'Prediogorado')
 
+# ======================================== Modo de jogo ========================================
 def modo_de_jogo():
     escolha = input('''Escolha o Modo de jogo:
           [S]olo
@@ -76,18 +81,18 @@ def modo_de_jogo():
         for indice in range(num_jogadores):
             nome_jogador = input(f'Digite o nome do jogador {indice + 1}:\n')
             if nome_jogador:
-                player(nome = nome_jogador)
+                Player(nome = nome_jogador)
             else:
-                sem_nome_player()
+                sem_nome_Player()
         return
 
     if escolha == 's':
         nome_jogador = input('Qual o seu nome?\n')
         if nome_jogador != '': 
-            player(nome = nome_jogador)
+            Player(nome = nome_jogador)
             return
         else:
-            sem_nome_player()
+            sem_nome_Player()
             return
     elif escolha == 'm':
         multiplayer()
@@ -95,20 +100,9 @@ def modo_de_jogo():
         print("Opção inválida. Tente novamente.")
         modo_de_jogo()
 
-modo_de_jogo()
-
-opcoes_modos = (
-'Escolher novamente o modo de jogo',
-'Pontuacao Jogadores',
-'Escolher jogo'
-)
-
-opcoes_modulos = (
-'Loteria',
-'Perguntas e Respostas'
-)
-
+# ======================================= Opcoes iniciais =======================================
 def opcoes_iniciais():
+    limpar()
     print('Escolha uma opção')
     indice_menu = 1
     for opcao in opcoes_modos:
@@ -125,28 +119,52 @@ def modulos():
     user = int(input())
     return user
 
+# ========================================== Iniciar ===========================================
+def iniciar():
+    modo_de_jogo()
+    
+    while True:
+        global user
+        user = opcoes_iniciais()
+
+        if user == 1:
+            limpar()
+            modo_de_jogo()
+            continue
+        if user == 2:
+            limpar()
+            for jogador in jogadores:
+                nome = jogador['nome']
+                jogos = jogador['jogos']
+                pontuacao = jogador['pontuacao']
+                print(f"Player: {nome:<20} Jogou {str(jogos):<3} partidas\t\tPontuacao Total: {str(pontuacao):<5}")
+            input('Enter parea continuar')
+            continue
+        if user == 3:
+            limpar()
+            user = modulos()
+            return user 
+
+# ======================================== Inicio jogo =========================================
+limpar()
+intro = ('''
+_______________________________________________________________________
+|                                                                      |
+| Projeto em conjunto com a namorada (Eu programo | Ela cria o roteiro)|
+|                Aqui teremos muitos "RTT" e amor*                     |
+|______________________________________________________________________|
+                            ^_^  ||   ∧,,,∧
+                          ( ^.^ )||  ꒰˶•༝•˶꒱
+                           >    >||  /  づ♡
+Aperte ENTER para iniciar (Não tem mais volta)\n''')
+
+input(intro) # Algo em mim diz que vai ser melhor assim doque escrever diretamente... vou me escutar
+avisos(1)
+limpar()
+
 while True:
     limpar()
-
-    user = opcoes_iniciais()
-
-    if user == 1:
-        limpar()
-        modo_de_jogo()
-        continue
-    if user == 2:
-        limpar()
-        for jogador in jogadores:
-            nome = jogador['nome']
-            jogos = jogador['jogos']
-            pontuacao = jogador['pontuacao']
-            print(f"Player: {nome:<20} Jogou {str(jogos):<3} partidas\t\tPontuacao Total: {str(pontuacao):<5}")
-        input('Enter parea continuar')
-        continue
-    if user == 3:
-        limpar()
-        user = modulos()
-
+    user = iniciar()
 
 # ======================================== Sorteio ========================================
     if user == 1:
@@ -169,7 +187,6 @@ while True:
                 continue
 
 # ==================================== SFinal da Main ====================================
-
     else:
         input('Opção invalida\nAperte ENTER para retornar ao menu')
         continue
