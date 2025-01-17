@@ -6,6 +6,7 @@ import scr as modo
 # =========================================== Config ==========================================
 def limpar():
     os.system('cls')
+limpar()
 
 # =========================================== dados ===========================================
 save = '.\\saves\\'
@@ -145,20 +146,8 @@ def iniciar():
             return user 
 
 # ======================================== Inicio jogo =========================================
-limpar()
-intro = ('''
-_______________________________________________________________________
-|                                                                      |
-| Projeto em conjunto com a namorada (Eu programo | Ela cria o roteiro)|
-|                Aqui teremos muitos "RTT" e amor*                     |
-|______________________________________________________________________|
-                            ^_^  ||   ∧,,,∧
-                          ( ^.^ )||  ꒰˶•༝•˶꒱
-                           >    >||  /  づ♡
-Aperte ENTER para iniciar (Não tem mais volta)\n''')
-
-input(intro) # Algo em mim diz que vai ser melhor assim doque escrever diretamente... vou me escutar
 avisos(0)
+avisos(1)
 limpar()
 
 while True:

@@ -20,15 +20,19 @@ def nome_jogador_data(*args):
 
 aviso_ = [
 ('''
-   /\\_/\\    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓         /\\_/\\
- =(  o.o)=  |Teclado gringo, palavras com acentos serao um bonus*|       =(0.0⸝⸝)=
-ʕ(   ა૮)    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛       (ა૮   )ʔ
+Projeto em conjunto com a namorada (Eu programo e ela cria o roteiro)   ∧,,,∧     ^_^ 
+                Aqui teremos muitos "RTT" e amor*                      ꒰˶•༝•˶꒱ (^.^ )
+Aperte ENTER para iniciar (Não tem mais volta)                         /  づ♡    <  < \\ \n'''), # 0
+('''
+   /\\_/\\    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    /\\_/\\
+ =(  o.o)=  |Teclado gringo, palavras com acentos serao um bonus*|  =(0.0⸝⸝)=
+ʕ(   ა૮)    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  (ა૮   )ʔ
 Agora pode prosseguir ˙ᴗ˙
-''') # 0
+''') # 1
 ]
 
 # =========================== Banco de dados de caracteres ===========================
-fonte_caracteres = 'https://www.messletters.com/pt/emoticons/'
+fonte_caracteres = 'https://www.messletters.com/pt/text-art/'
 # ====================================== Basicos =====================================
 '''
 ≽^•༚• ྀིྀ≼
@@ -100,9 +104,6 @@ fonte_caracteres = 'https://www.messletters.com/pt/emoticons/'
 ◉_◉
 
 υ｡’ ᵔ ‘｡υ
-
-
-
 
 '''
 # ===================================== Complexos ====================================
