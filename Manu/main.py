@@ -1,7 +1,7 @@
 import os
 import json
 
-import scr as modo
+import scr
 
 # =========================================== Config ==========================================
 def limpar():
@@ -25,7 +25,7 @@ opcoes_modulos = (
 
 # =========================================== avisos ===========================================
 def avisos(numero):
-    input(modo.aviso_[numero])
+    input(scr.aviso_[numero])
 
 # ============================================ save ============================================
 def recuperar_save():
@@ -162,7 +162,7 @@ while True:
 # ======================================== Sorteio ========================================
     if user == 1:
         while True:
-            modo.sorteio()
+            scr.sorteio()
             user = input(f'Aperte ENTER para continuar ou [E]xit para sair\n').lower()
             if user == 'e':
                 break
@@ -172,7 +172,7 @@ while True:
 # ================================= Perguntas e respostas =================================
     if user == 2:
         while True:
-            modo.perguntas_e_respostas()
+            scr.perguntas_e_respostas()
             user = input(f'Aperte ENTER para continuar ou [E]xit para sair\n').lower()
             if user == 'e':
                 break
