@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio EN
 
 Welcome to my project portfolio! Here are the projects that showcase my skills and interests in programming.
 
