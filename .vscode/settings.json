@@ -1,5 +1,6 @@
 {
     "python.analysis.typeCheckingMode": "basic",
+    "editor.rulers": [80, 120],
     "workbench.colorTheme": "Default Dark Modern",
     "explorer.compactFolders": false,
     "code-runner.executorMap": {
@@ -102,5 +103,5 @@
             "args": ["-NoExit", "-Command", "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force"]
         }
     },
-    "workbench.productIconTheme": "bongocat"
+    //"workbench.productIconTheme": "bongocat"
 }
