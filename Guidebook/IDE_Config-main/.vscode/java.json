@@ -1,0 +1,56 @@
+    {
+        "Main method with args": {
+            "prefix": "main",
+            "body": [
+                "/**",
+                " * @(#)${TM_FILENAME_BASE}.java",
+                " *",
+                " * ${TM_FILENAME_BASE}",
+                " *",
+                " * @author ${TM_USERNAME}",
+                " * @version 1.00 ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
+                " */",
+                "",
+                "public class ${TM_FILENAME_BASE} {",
+                "",
+                "\t/**",
+                "\t * @param args",
+                "\t */",
+                "",
+                "\tpublic static void main(String[] args) {",
+                "",
+                "\t\t// TODO, add your application code",
+                "\t\tSystem.out.println(\"Hello World!\");",
+                "\t}",
+                "}"
+            ],
+            "description": "Generate main method with args"
+        },
+        "Main method": {
+            "prefix": "main",
+            "body": [
+                "/**",
+                " * @(#)${TM_FILENAME_BASE}.java",
+                " *",
+                " * ${TM_FILENAME_BASE}",
+                " *",
+                " * @author ${TM_USERNAME}",
+                " * @version 1.00 ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
+                " */",
+                "",
+                "public class ${TM_FILENAME_BASE} {",
+                "",
+                "\t/**",
+                "\t * @param args",
+                "\t */",
+                "",
+                "\tpublic static void main(String[] args) {",
+                "",
+                "\t\t// TODO, add your application code",
+                "\t\tSystem.out.println(\"Hello World!\");",
+                "\t}",
+                "}"
+            ],
+            "description": "Generate main method"
+        }
+    }
