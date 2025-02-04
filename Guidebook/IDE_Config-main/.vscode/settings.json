@@ -84,18 +84,6 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "editor.renderWhitespace": "all",
-    "keybindings": [
-        {
-            "key": "f9",
-            "command": "debug.toggleBreakpoint",
-            "when": "editorTextFocus"
-        },
-        {
-            "key": "ctrl+shift+f9",
-            "command": "debug.removeAllBreakpoints",
-            "when": "editorTextFocus"
-        }
-    ],
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
@@ -103,5 +91,31 @@
             "args": ["-NoExit", "-Command", "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force"]
         }
     },
-    //"workbench.productIconTheme": "bongocat"
+    "git.openRepositoryInParentFolders": "always",
+    "editor.fontFamily": "Consolas, 'Dank Mono', 'Source Code Pro', 'Fira Code', Menlo, 'Inconsolata', 'Droid Sans Mono', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', Courier, Monaco, monospace",
+    "terminal.integrated.fontFamily": "",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.fixAll.unusedImports": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    "python.languageServer": "Pylance",
+    "python.formatting.autopep8Args": [
+        "--indent-size=4",
+        "--max-line-length=80"
+    ],
+    "python.linting.flake8Args": [],
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.diagnosticSeverityOverrides": {},
+    "cSpell.enabled": false,
+    "workbench.productIconTheme": "bongocat"
 }
